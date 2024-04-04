@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600&amp;display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="src/css/global.css" />
+  <link rel="stylesheet" href="src/css/table.css" />
+  <link rel="stylesheet" href="src/css/home.css" />
+
+  <script src="https://unpkg.com/feather-icons"></script>
+  <title>Mapemanto De Funcionários</title>
+</head>
+
+<body>
+  <div class="container">
+    <header class="header-container">
+      <div class="header-content">
+        <h1>Wire <span>Funcionários</span></h1>
+        <p class="subtitle-container">
+          Sistema de mapeamento de funcionários da empresa <br />
+          wire, gerenciando dados e gerando empregos!
+        </p>
+      </div>
+
+      <button id="updateDetails">
+        <i data-feather="plus"></i>
+      </button>
+    </header>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Raça</th>
+          <th>Nascimento</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody id="dinamic-list">
+        <tr><!--Lista dinâmica--></tr>
+        <tr>
+          <td>
+            <a href="#">Guilherme Santos</a>
+          </td>
+
+          <td>Preto</td>
+          <td style="width: 100px">07/11/2002</td>
+          <td>21 anos</td>
+        </tr>
+
+        <tr>
+          <td>
+            <a href="#">John Doe</a>
+          </td>
+
+          <td>Preto</td>
+          <td>01/01/1990</td>
+          <td>31 anos</td>
+        </tr>
+
+        <tr>
+          <td>
+            <a href="#">Jane Smith</a>
+          </td>
+
+          <td>Indigena</td>
+          <td>02/02/1995</td>
+          <td>26 anos</td>
+        </tr>
+
+        <tr>
+          <td>
+            <a href="#">Mike Johnson</a>
+          </td>
+
+          <td>Branco</td>
+          <td>03/03/1985</td>
+          <td>36 anos</td>
+        </tr>
+
+        <tr>
+          <td>
+            <a href="#">Sarah Williams</a>
+          </td>
+
+          <td>Pardo</td>
+          <td>04/04/1992</td>
+          <td>29 anos</td>
+        </tr>
+
+        <tr>
+          <td>
+            <a href="#">David Brown</a>
+          </td>
+
+          <td>Pardo</td>
+          <td>05/05/1988</td>
+          <td>33 anos</td>
+        </tr>
+
+        <tr>
+          <td>
+            <a href="#">Emily Davis</a>
+          </td>
+
+          <td>Branco</td>
+          <td>06/06/1998</td>
+          <td>23 anos</td>
+        </tr>
+
+        <tr>
+          <td>
+            <a href="#">Michael Wilson</a>
+          </td>
+
+          <td>Preto</td>
+          <td>07/07/1993</td>
+          <td>28 anos</td>
+        </tr>
+
+        <tr>
+          <td>
+            <a href="#">Amy Taylor</a>
+          </td>
+
+          <td>Branco</td>
+          <td>08/08/1987</td>
+          <td>34 anos</td>
+        </tr>
+
+        <tr>
+          <td>
+            <a href="#">Robert Anderson</a>
+          </td>
+
+          <td>Pardo</td>
+          <td>09/09/1991</td>
+          <td>30 anos</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <dialog id="favDialog" class="dialog-container">
+    <form method="dialog" class="dialog-content">
+      <h2>Novo funcionário</h2>
+
+      <p style="color: #8c8c8c">
+        Informe as seguintes credenciais para contratar o novo funcionário
+      </p>
+
+      <label for="name">Nome:
+        <input type="text" id="name" name="name" placeholder="Informe seu nome:" required />
+      </label>
+
+      <label for="raca">Raça:
+
+        <select id="raca" name="raca" required>
+          <option value="Preto">Preto</option>
+          <option value="Branco">Branco</option>
+          <option value="Pardo">Pardo</option>
+          <option value="Indigena">Indigena</option>
+        </select>
+      </label>
+
+      <label for="dataNascimento">Data de Nascimento:
+        <input type="date" id="dataNascimento" name="dataNascimento" required />
+      </label>
+
+      <menu class="options-footer">
+        <button id="cancel" type="reset">Cancelar</button>
+        <button type="submit" onclick="cadastrar()">Cadastrar</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <script src="src/js/controllers/open-modal.js"></script>
+  <script src="table.js"></script>
+
+  <script>
+    feather.replace();
+  </script>
+</body>
+
+</html>
